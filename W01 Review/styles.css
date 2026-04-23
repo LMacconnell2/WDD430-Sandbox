@@ -1,0 +1,112 @@
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --tertiary-color: #e74c3c;
+    --background-color: #ecf0f1;
+    --text-color: #2c3e50;
+}
+
+html {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+body {
+    margin: 0px;
+}
+
+header {
+    background-color: var(--primary-color);
+    padding: 20px;
+}
+
+.title {
+    color: var(--background-color);
+    text-align: center;
+    margin-top: 20px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    flex: 1;
+}
+
+.buttons {
+    margin-bottom: 20px;
+    display: grid;
+    max-width: fit-content;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "reset reset"
+                         "undo redo";
+                         gap: 10px;
+}
+
+#reset {
+    grid-area: reset;
+    background-color: var(--primary-color);
+}
+
+#undo {
+    grid-area: undo;
+    background-color: var(--tertiary-color);
+}
+
+#redo {
+    grid-area: redo;
+    background-color: var(--secondary-color);
+
+}
+
+#reset, #undo, #redo {
+    padding: 10px 20px;
+    font-size: 1em;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    font-size: 2em;
+    background-color: var(--background-color);
+    border: 2px solid var(--primary-color);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cell:hover {
+    background-color: var(--secondary-color);
+}
+
+footer p {
+    text-align: center;
+    color: var(--text-color);
+    margin-top: 20px;
+}
+
+.taken:hover {
+    background-color: var(--tertiary-color);
+    cursor: not-allowed;
+}
